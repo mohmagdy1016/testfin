@@ -1,0 +1,19 @@
+1- prepare enviroment :
+
+files:
+app.py , Makefile , requirments.txt, dockerfile , as per step......
+
+ python3 -m venv ~/.devopsudacity
+ source ~/.devopsudacity/bin/activate
+make install --intsll project prerequists
+install the below:
+ Docker
+Hadolint
+Kubernetes (Minikube)
+jenkins
+makelint
+security test on jenkins 
+build docker 
+upliad docker image to docker hub
+install kubernets cluster on aws  usinf cloudformation or ansible 
+deploy on kubernents cluster 
