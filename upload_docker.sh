@@ -5,11 +5,11 @@
 
 # Step 1:
 # Create dockerpath
- dockerpath="mohmagdy1016/udacitycapstoneproject"
+ dockerpath="mohmagdy1016/fintest"
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
+#echo "Docker ID and Image: $dockerpath"
 #docker login &&\
 #docker image tag api $dockerpath
 
