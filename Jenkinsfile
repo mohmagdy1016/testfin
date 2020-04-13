@@ -8,7 +8,7 @@ pipeline {
     }
    stage('Deploy our image') {
    steps{
-   withCredentials([usernamePassword(credentialsId: 'dockerhubusr', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+   withCredentials([usernamePassword(credentialsId: 'dockerhubusr', passwordVariable: 'dockerhubusrPassword', usernameVariable: 'dockerhubusrUser')]) {
 	     	sh "docker login -u ${env.dockerhubusrUser} -p ${env.dockerhubusrPassword}"
    }
    }
