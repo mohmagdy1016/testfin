@@ -11,12 +11,12 @@ pipeline {
    withCredentials([usernamePassword(credentialsId: 'dockerhubusr', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 	     	sh "docker login -u ${env.dockerhubusrUser} -p ${env.dockerhubusrPassword}"
    }
+   }
+   }
     stage('Upload Image') {
       steps {
         sh 'docker image push mohmagdy1016/fintest'
       }
     }
   }
-}
-}
 }
