@@ -1,9 +1,4 @@
 pipeline {
-environment {
- registry = "mohmagdy1016/fintest"
- registryCredential = 'dockerhubusr'
- dockerImage = ''
-}
   agent any
   stages {
     stage('Build Docker') {
@@ -15,13 +10,9 @@ environment {
     }
    stage('Deploy our image') {
    steps{
-   script {
-   docker.withRegistry( '', registryCredential ) {
-   dockerImage.push()
- }
- }
- }
- }
+   withCredentials([usernamePassword(credentialsId: 'dockerhubusr', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+	     	sh "docker login -u ${env.dockerhubusrUser} -p ${env.dockerhubusrPassword}"
+   }
     stage('Upload Image') {
       steps {
         sh 'make upload'
