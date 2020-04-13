@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Docker') {
       steps {
-        sh 'make build'
+        docker build --tag=hello .
       }
     }
     stage('Login to dockerhub') {
