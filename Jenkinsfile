@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+	stage('Lint') {
+      steps {
+        sh 'make lint'
+      }
+    }
         stage('Build Docker') {
       steps {
         sh 'docker build --tag=hello .'
