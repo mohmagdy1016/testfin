@@ -1,9 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage("Linting") {
+      echo 'Linting...'
+      sh '/home/ubuntu/.local/bin/hadolint Dockerfile'
+    }
     stage('Build Docker') {
       steps {
-        docker build --tag=hello .
+        sh 'docker build --tag=hello .'
       }
     }
     stage('Login to dockerhub') {
