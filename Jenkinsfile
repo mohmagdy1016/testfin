@@ -6,9 +6,6 @@ pipeline {
         sh 'docker build --tag=hello .'
       }
     }
-      }
-      }
-    }
    stage('Deploy our image') {
    steps{
    withCredentials([usernamePassword(credentialsId: 'dockerhubusr', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
