@@ -15,7 +15,7 @@ pipeline {
    }
     stage('Upload Image') {
       steps {
-        sh 'make upload'
+        sh 'docker image push mohmagdy1016/fintest'
       }
     }
   }
