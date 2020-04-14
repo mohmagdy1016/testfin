@@ -22,7 +22,7 @@ pipeline {
       steps {
 	      sh """
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
-                    pylint --disable=R,C,W1203 pylint **/*.py
+                    make pylint | tee report/pylint.log || true
                 """
            }
            }
