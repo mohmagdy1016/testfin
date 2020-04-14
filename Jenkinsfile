@@ -4,12 +4,11 @@ pipeline {
 	  stage('Preparing VirtualEnv') {
 		  steps {
         echo 'Creating virtualenv ...'
-        sh 'virtualenv --no-site-packages .env'
-    sh '. .env/bin/activate'
-    sh 'ls -all'
-    if (fileExists('requirements.txt')){
-        sh 'pip install -r requirements.txt'
-    }
+        sh 'python3 -m venv ~/.devops'
+    sh 'source ~/.devops/bin/activate'
+    sh 'pip install --upgrade pip &&\
+                pip install -r requirements.txt'
+
    }
   }
 	 stage('Lint') {
