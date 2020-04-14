@@ -20,7 +20,7 @@ pipeline {
         }
 	 stage('Lint') {
       steps {
-        sh 'pylint --disable=R,C,W1203 app.py'
+        sh 'pylint --disable=R,C,W1203 /var/lib/jenkins/workspace/testfin_master/app.py'
            }
            }
 }
