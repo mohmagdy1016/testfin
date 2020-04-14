@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh """
                     echo ${SHELL}
+		    . venv/bin/deactivate
                     [ -d venv ] && rm -rf venv
                     virtualenv --python=python3.6 venv
                     virtualenv venv
