@@ -10,6 +10,7 @@ pipeline {
                     echo ${SHELL}
                     [ -d venv ] && rm -rf venv
                     python3 -m venv ~/.venv
+		    virtualenv venv
                     . venv/bin/activate
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install --upgrade pip &&\
