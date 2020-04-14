@@ -18,10 +18,9 @@ pipeline {
         sh 'docker image push mohmagdy1016/fintest'
       }
     }
-   stage("Cleaning up") {
+   stage('Cleaning up') {
       steps {
-      echo 'Cleaning up...'
-      sh "docker system prune"
+      sh 'docker system prune'
     }
    }
   }
