@@ -14,7 +14,7 @@ pipeline {
                     #. venv/bin/activate
                     export PATH=${VIRTUAL_ENV}/bin:${PATH}
                     pip install --upgrade pip
-                    pip install -r requirements.txt -r dev-requirements.txt
+                    pip install -r requirements.txt
                     make clean
                 """
             }
