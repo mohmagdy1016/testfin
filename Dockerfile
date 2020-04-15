@@ -1,9 +1,7 @@
-<!doctype html>
-    <html>
-      <head>
-        <title>Static HTML Site</title>
-      </head>
-      <body>
-        <p>Hello! My Name is Mohamed Magdy.</p>
-      </body>
-    </html>
+FROM nginx:1.17-alpine
+
+COPY index.html /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
