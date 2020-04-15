@@ -4,11 +4,6 @@ FROM nginx:1.17-alpine
 # Create a working directory
 WORKDIR /app
 
-COPY index.html /usr/share/nginx/html
+COPY . index.html /var/www/html/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
-
-
-
-
-
