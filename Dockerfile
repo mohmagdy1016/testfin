@@ -2,7 +2,7 @@ FROM nginx:1.17-alpine
 
 ## Step 1:
 # Create a working directory
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 
 COPY index.html /usr/share/nginx/html
 EXPOSE 80
