@@ -33,8 +33,10 @@ pipeline {
       }
     }
    stage('connect to aws') {
-                  withAWS(region:'us-east-2',credentials:'awsuser')
-         }
+      steps {
+         withAWS(region:'us-east-2',credentials:'awsuser')
+       }     
+      }
    stage('Cleaning up') {
       steps {
       sh 'docker system prune -f'
