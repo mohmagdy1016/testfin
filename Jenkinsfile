@@ -34,7 +34,7 @@ pipeline {
     }
    stage('connect to aws') {
       steps {
-         withAWS(credentials: 'aws-credentials', region:'us-east-2', credentials:'Devops')
+         withAWS(credentials: 'Devops', region:'us-east-2')
        }     
       }
    stage('Cleaning up') {
