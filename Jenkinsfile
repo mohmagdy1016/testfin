@@ -32,6 +32,11 @@ pipeline {
         sh 'docker image push mohmagdy1016/fintest'
       }
     }
+   stage('connect to aws') {
+              steps {
+                  withAWS(region:'us-east-2',credentials:'aws') 
+              }
+         }
    stage('Cleaning up') {
       steps {
       sh 'docker system prune -f'
