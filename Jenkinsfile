@@ -33,9 +33,7 @@ pipeline {
       }
     }
    stage('connect to aws') {
-              steps {
-                  withAWS(region:'us-east-2',credentials:'aws') 
-              }
+                  withAWS(region:'us-east-2',credentials:'aws')
          }
    stage('Cleaning up') {
       steps {
