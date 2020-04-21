@@ -49,6 +49,3 @@ pipeline {
 }
 
 
-withAWS(credentials: 'Devopssayed', region: 'us-east-2') {
-    sh './aws iam get-user'
-}
