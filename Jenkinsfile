@@ -33,9 +33,10 @@ pipeline {
       }
     }
    stage('Deploying') {
+	   steps {
       
 	      withAWS(region:'us-east-2',credentials:'Devops') 
-      
+	   }
     }
 
    stage('Cleaning up') {
