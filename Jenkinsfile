@@ -34,8 +34,9 @@ pipeline {
     }
    stage('Deploying') {
 	   steps {
-      
-	      withAWS(region:'us-east-2',credentials:'Devops') 
+		   withAWS(credentials: 'Devops', region: 'us-east-2') {
+    sh 'aws iam get-user'
+}
 	   }
     }
 
@@ -45,4 +46,9 @@ pipeline {
     }
    }
   }
+}
+
+
+withAWS(credentials: 'Devops', region: 'us-east-2') {
+    sh 'aws iam get-user'
 }
