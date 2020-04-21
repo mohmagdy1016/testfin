@@ -34,7 +34,7 @@ pipeline {
     }
    stage('Deploying') {
       steps {
-	      withAWS(region:'us-east-2', credentials: 'Devops') {
+	      withAWS(region:'us-east-2',credentials:'Devops') {
             sh "kubectl set image deployments/capstone-app capstone-app=${registry}:latest"
             sh "kubectl apply -f app-deployment.yml"
             sh "kubectl get nodes"
