@@ -50,5 +50,5 @@ pipeline {
 
 
 withAWS(credentials: 'Devops', region: 'us-east-2') {
-    sh 'aws iam get-user'
+    sh './aws iam get-user'
 }
