@@ -34,7 +34,7 @@ pipeline {
     }
    stage('Deploying') {
 	   steps {
-		   withAWS(credentials: 'Devops', region: 'us-east-2') {
+		   withAWS(credentials: 'Devopszft', region: 'us-east-2') {
     sh 'aws iam get-user'
 }
 	   }
