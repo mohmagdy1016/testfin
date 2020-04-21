@@ -32,9 +32,22 @@ pipeline {
         sh 'docker image push mohmagdy1016/fintest'
       }
     }
-   stage('connect to aws') {
+   stage('Deploying') {
       steps {
-         withAWS(credentials: 'Devops', region:'us-east-2')
+	      withAWS(credentials: 'Devops', region:'us-east-2') {
+            sh "kubectl set image deployments/capstone-app capstone-app=${registry}:latest"
+            sh "kubectl apply -f app-deployment.yml"
+            sh "kubectl get nodes"
+            sh "kubectl get pods"
+        }
+      }
+    }
+    stage("Cleaning up") {
+      echo 'Cleaning up...'
+      sh "docker system prune"
+    }
+}
+
        }     
       }
    stage('Cleaning up') {
