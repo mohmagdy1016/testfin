@@ -35,8 +35,7 @@ pipeline {
    stage('Deploying') {
 	   steps {
 		   withAWS(credentials: 'Devops', region: 'us-east-2') {
-    sh "aws eks --region eu-east-2 update-kubeconfig --name CapstoneEKS-QkfppffEIyBB"
-    sh 'kubectl create -f app-deployment.yml'
+                  sh 'kubectl create -f app-deployment.yml'
 }
 	   }
     }
