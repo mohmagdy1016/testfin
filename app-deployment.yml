@@ -15,5 +15,7 @@ spec:
           containers:
             - name: fintest 
               image: mohmagdy1016/fintest:37
+              command: [kubectl port-forward deployment/nginx 80:8000]
               ports: 
               - containerPort: 8000
+         
