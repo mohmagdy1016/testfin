@@ -34,6 +34,7 @@ pipeline {
    }
    stage('Upload Image') {
       steps {
+	echo "Docker ID and Image: $dockerpath"
 	imageId=$(docker images -q $dockerpath:latest)
 	sh 'docker tag $imageId $dockerpath:$version'
 	sh 'docker push $dockerpath'
