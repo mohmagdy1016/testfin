@@ -15,6 +15,11 @@ pipeline {
                 }
             }
         }
+	stage('Security Scan') {
+              steps { 
+                 aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+              }
+         }         
         stage('Build Docker') {
       steps {
         sh 'docker build --tag=hello .'
