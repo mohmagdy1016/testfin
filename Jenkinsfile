@@ -34,6 +34,10 @@ pipeline {
    }
    stage('Upload Image') {
       steps {
+	 export username="mohmagdy1016"
+	 export path=fintest
+	 export version=0.1
+	 export dockerpath=$username/$path;
 	echo "Docker ID and Image: $dockerpath"
 	imageId=$(docker images -q $dockerpath:latest)
 	sh 'docker tag $imageId $dockerpath:$version'
