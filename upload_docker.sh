@@ -7,7 +7,6 @@
 	 export path=fintest
 	 export version=0.1
 	 export dockerpath=$username/$path;
-	echo "Docker ID and Image: $dockerpath"
 	imageId=$(docker images -q $dockerpath:latest)
 	docker tag $imageId $dockerpath:$version
 	docker push $dockerpath
