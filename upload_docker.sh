@@ -3,16 +3,11 @@
 
 # Assumes that an image is built via `run_docker.sh`
 
-# Step 1:
-# Create dockerpath
- dockerpath="mohmagdy1016/fintest"
-
-# Step 2:  
-# Authenticate & tag
-#echo "Docker ID and Image: $dockerpath"
-#docker login &&\
-#docker image tag api $dockerpath
-
-# Step 3:
-# Push image to a docker repository
-docker image push $dockerpath
+  export username="mohmagdy1016"
+	 export path=fintest
+	 export version=0.1
+	 export dockerpath=$username/$path;
+	echo "Docker ID and Image: $dockerpath"
+	imageId=$(docker images -q $dockerpath:latest)
+	docker tag $imageId $dockerpath:$version
+	docker push $dockerpath
