@@ -22,7 +22,7 @@ pipeline {
          }         
         stage('Build Docker') {
       steps {
-        sh 'docker build --tag=hello .'
+	sh 'docker build --build-arg APP_PORT=80 --tag=mohmagdy1016/fintest .'
       }
     }
    stage('Deploy our image') {
@@ -34,7 +34,9 @@ pipeline {
    }
    stage('Upload Image') {
       steps {
-        sh 'docker image push mohmagdy1016/fintest'
+	imageId=$(docker images -q $dockerpath:latest)
+	sh 'docker tag $imageId $dockerpath:$version'
+	sh 'docker push $dockerpath'
       }
     }
    stage('Deploying') {
