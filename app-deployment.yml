@@ -8,7 +8,9 @@ spec:
          run: nginx
     strategy:
        type: RollingUpdate
-    replicas: 3
+       rollingUpdate:
+           maxUnavailable: 75%
+    replicas: 4
     template:
       metadata:
         labels:
