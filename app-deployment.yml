@@ -20,7 +20,7 @@ spec:
           containers:
             - name: fintest 
               imagePullPolicy: Always
-              image: mohmagdy1016/fintest:latest
+              image: mohmagdy1016/fintest
               ports:
               - containerPort: 80
            
