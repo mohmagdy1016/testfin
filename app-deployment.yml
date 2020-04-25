@@ -7,9 +7,6 @@ spec:
        matchLabels:
          run: nginx
     strategy:
-       rollingUpdate:
-          maxSurge: 25%
-          maxUnavailable: 25%
        type: RollingUpdate
     replicas: 3
     template:
