@@ -3,9 +3,6 @@ kind: Deployment
 metadata:
    name: nginx
 spec:
-    selector:
-      matchLabels:
-       run: nginx
     strategy:
        type: RollingUpdate
        rollingUpdate:
@@ -15,7 +12,7 @@ spec:
     template:
       metadata:
         labels:
-          run: nginx
+          app: nginx
       spec:
           containers:
             - name: fintest 
@@ -32,7 +29,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    run: nginx
+    app: nginx
   ports:
     - name: http
       protocol: TCP
