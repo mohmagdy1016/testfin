@@ -5,7 +5,7 @@ metadata:
 spec:
     selector:
        matchLabels:
-         app: nginx
+         run: nginx
     strategy:
        type: RollingUpdate
        rollingUpdate:
