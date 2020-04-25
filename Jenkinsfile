@@ -35,7 +35,6 @@ pipeline {
    stage('Deploying') {
 	   steps {
 		   withAWS(credentials: 'Devops', region: 'us-east-2') {
-	         sh 'kubectl set image deployments/nginx *=${registry}:latest'
                  sh 'kubectl apply -f app-deployment.yml'
 	            
 }
