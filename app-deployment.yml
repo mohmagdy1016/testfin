@@ -8,9 +8,6 @@ spec:
          run: nginx
     strategy:
        type: RollingUpdate
-       rollingUpdate:
-         maxSurge: 1
-         maxUnavailable: 1
     replicas: 3
     template:
       metadata:
