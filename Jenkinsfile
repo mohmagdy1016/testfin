@@ -17,7 +17,7 @@ pipeline {
          }         
         stage('Build Docker') {
       steps {
-	sh 'docker build --build-arg APP_PORT=80 .'
+	sh 'docker build --build-arg APP_PORT=80 --tag=mohmagdy1016/fintest .'
       }
     }
    stage('Deploy our image') {
