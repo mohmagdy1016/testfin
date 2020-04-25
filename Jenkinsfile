@@ -35,7 +35,7 @@ pipeline {
    stage('Deploying') {
 	   steps {
 		   withAWS(credentials: 'Devops', region: 'us-east-2') {
-                 sh 'kubectl create -f app-deployment.yml'
+                 sh 'kubectl apply -f app-deployment.yml'
 			   
 	            
 }
