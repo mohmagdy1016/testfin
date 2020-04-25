@@ -35,7 +35,7 @@ pipeline {
    stage('Deploying') {
 	   steps {
 		   withAWS(credentials: 'Devops', region: 'us-east-2') {
-	         sh 'kubectl set image deployments/nginx nginx=${registry}:latest'
+	         sh 'kubectl set image deployment/nginx nginx=${registry}:latest'
                  sh 'kubectl apply -f app-deployment.yml'
 	         sh 'kubectl get nodes'
                  sh 'kubectl get pods'
